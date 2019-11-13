@@ -1,0 +1,35 @@
+.venn > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.venn div div {
+  border-radius: 50%;
+  width: 6em;
+  height: 6em;
+  line-height: 6em;
+  text-align: center;
+  font-size: 1.5em !important;
+}
+
+.venn > div:nth-child(1) > div:nth-child(1) {
+  border: 0.2em solid #FAAD00!important;
+}
+.venn > div:nth-child(1) > div:nth-child(2) {
+  border: 0.2em  solid #5EC299!important;
+}
+.venn > div:nth-child(1) > div:nth-child(3) {
+  border: 0.2em  solid #E34229!important;
+}
+
+.venn > div:nth-child(2) > div:nth-child(1) {
+  border: 0.2em  solid #6694CF!important;
+}
+.venn > div:nth-child(2) > div:nth-child(2) {
+  border: 0.2em  solid #F9EA29!important;
+}
+
+.venn > div:nth-child(2) {
+  margin: -3em 4.5em 0 4.5em;
+}

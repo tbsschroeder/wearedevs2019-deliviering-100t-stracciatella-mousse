@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>100t of Stracciatella</title>
+
+  <link rel="stylesheet" href="css/fontawesome-5.4.1.all.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/metronom.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/venn.css">
+
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+</head>
+
+<body class="dark">
+  <div class="reveal">
+    <div id="footer">
+      <img class="footer-img" id="footer-left" src="img/metronom-white-yellow.png" alt="footer-left">
+      <img class="footer-img" id="footer-right" src="img/wad.svg" alt="footer-right">
+    </div>
+
+    <div class="slides">
+
+      <section>
+        <h3>Content</h3>
+        <small>
+          <table id="tmpt">
+            <thead>
+              <tr><th>BW</th><th>TS</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Opening</td><td></td>
+              <tr><td>Speaker Intro</td><td>Speaker Intro</td></tr>
+              <tr><td></td><td>Story telling: Stracciatella Bug</td></tr>
+              <tr><td></td><td>High level: M|Fulfill</td></tr>
+              <tr><td>METRONOM: Our test pyramid and ways of working / releases</td><td></td></tr>
+              <tr><td></td><td>Metrics: When to implement, how to use and read</td></tr>
+              <tr><td>-> Theory / Learnings / How To</td><td></td></tr>
+              <tr><td>Live coding: Grafana</td><td></td></tr>
+              <tr><td></td><td>Summary</td></tr>
+            </tbody>
+          </table>
+        </small>
+      </section>
+
+      <section>
+        <h3>Speech Structure Building</h3>
+        <ul>
+          <li>Advertisment: Metro Metric Mousse</li>
+          <li>Call to Action: Step back, take a breath and have a look at your metrics</li>
+          <li>Pillars</li>
+          <ul>
+            <li>Metrics / Logging</li>
+            <li>Dashboard / Visibility (TV in the Office)</li>
+            <li>Know your data & patterns</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section class="grayscale" data-background-image="img/bg/ford.jpg">
+        <div class="center list-dark-bg" style="width: 45%; position: relative; top: -5em; left: -10em;">
+          Quality means doing it right even when no one is looking.
+        </div>
+      </section>
+      
+      <section class="center">
+        <h1 class="bebas center" style="font-size: 2.5em">
+          How we almost delivered 100t<br>
+          of Stracciatella Mousse
+        </h1>
+      </section>
+      
+      <section class="center" data-background-image="img/bg/store.jpg">
+      </section>
+      
+      <section class="center grayscale" data-background-image="img/bg/store.jpg" data-background-opacity="0.5">
+        <div class="center" style="position: absolute; width: 140%; left: -20%; padding-bottom: 1em; background-color: rgba(32, 32, 32, 0.9);">
+          <div class="center" style="width: 30em;">
+            <img src="img/metronom-white-yellow.png" style="padding: 1em; width: 50%">
+            <div class="flex-wrap">
+              <div class="card card-space-sm">
+                <p class="fragment fade-in" style="line-height: 1;">
+                  6<br><span style="font-size: 0.5em;">Cities</span>
+                </p>
+              </div>
+              <div class="card card-space-sm">
+                <p class="fragment fade-in" style="line-height: 1;">
+                  &gt;25<br><span style="font-size: 0.5em;">Countries</span>
+                </p>
+              </div>
+              <div class="card card-space-sm">
+                <p class="fragment fade-in" style="line-height: 1;">
+                  &gt;1000<br><span style="font-size: 0.5em;">Services</span>
+                </p>
+              </div>
+              <div class="card card-space-sm">
+                <p class="fragment fade-in" style="line-height: 1;">
+                  &gt;2000<br><span style="font-size: 0.5em;">Employees</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <span class="photo-credits" style="left: 25%;">
+          Icons made by
+          <a href="https://www.flaticon.com/authors/smashicons" target="_blank">Smashicons</a>, 
+          <a href="https://www.flaticon.com/authors/vectors" target="_blank"market">Vectors Market</a>, 
+          <a href="https://www.flaticon.com/authors/freepik" target="_blank">Freepik</a>, 
+          <a href="https://www.flaticon.com/authors/prosymbols" target="_blank">Prosymbols</a>, 
+          <a href="https://www.flaticon.com/authors/payungkead" target="_blank">Payungkead</a>,
+          <a href="https://www.flaticon.com/authors/smashicons" target="_blank">Smashicons</a> and
+          <a href="https://www.flaticon.com/authors/monkik" target="_blank">monkik</a> from
+          <a href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a>
+        </span>
+        <table>
+          <tr>
+            <td style="width: 15%"><img src="img/journey/dessert.svg"></td>
+            <td class="fragment fade-in" style="width: 15%"><img src="img/journey/monitor.svg"></td>
+            <td class="fragment fade-in" style="width: 15%"><img src="img/journey/planning.svg"></td>
+            <td class="fragment fade-in" style="width: 15%"><img src="img/journey/warehouse.svg"></td>
+            <td class="fragment fade-in" style="width: 15%"><img src="img/journey/cargo.svg"></td>
+            <td class="fragment fade-in" style="width: 15%"><img src="img/journey/truck.svg"></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td style="width: 33%"></td>
+            <td class="fragment fade-in" style="width: 15%"><img src="img/journey/employee.svg"></td>
+            <td class="fragment fade-in" style="width: 15%"><img src="img/journey/worker.svg"></td>
+            <td style="width: 19%"></td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <table class="center">
+          <tr>
+            <td class="center" style="vertical-align: middle; width: 40%"">
+              <span class="bebas" style="font-size: 4em; vertical-align: middle;">
+                  99.999 x
+              </span>
+            </td>
+            <td style="width: 60%">
+              <img src="img/droetker_mousse_trans.png">
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section data-background-image="img/bg/firefighter.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://www.pexels.com/de-de/@phantomant" target="_blank">Tim Eiden</a> on Pexels
+        </span>
+      </section>
+
+      <section data-background-image="img/bg/firefighter.jpg" data-background-opacity="0.1">
+
+          <div class="flex-wrap">
+            <div class="card card-space-s">
+              <p class="fragment fade-in center" style="line-height: 2;">
+                100.000 Packs
+              </p>
+            </div>
+            <div class="card card-space-s">
+              <p class="fragment fade-in center">
+                3,5L milk / package<span class="fira">=></span> 450m³ mix
+              </p>
+            </div>
+            <div class="card card-space-s">
+              <p class="fragment fade-in center" style="line-height: 2;">
+                  FPN 10/2000<br>2m³ & 10bar
+              </p>
+            </div>
+            <div class="card card-space-s">
+              <p class="fragment fade-in center" style="line-height: 2;">
+                1:4 Mix <br> 1800m³
+              </p>
+            </div>
+        </div>
+      </section>
+
+      <section data-background-image="img/bg/firefighter.jpg" data-background-opacity="0.5">
+        <h2 class="center list-dark-bg" style="width: 60%">6.000.000 portions in<br>15h with 10bar</h2>
+      </section>
+
+      <section>
+        <img src="img/journey/employee.svg" style="width: 48%">
+        <img src="img/journey/worker.svg" style="width: 48%">
+      </section>
+      
+      <section class="center">
+        <img src="img/bug.png" style="width: 50%">
+      </section>
+      
+      <section>
+        <h3>(BW) METRONOM: Our test pyramid and ways of working / releases</h3>
+      </section>
+
+      <section data-background-image="img/bg/logging.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@usefulcollective" target="_blank">Mildly Useful</a> on Unsplash
+        </span>
+      </section>
+
+      <section data-background-image="img/bg/logging.jpg" data-background-opacity="0.1">
+        <div class="flex-wrap">
+          <div class="card card-space-sm">
+            <p class="center fragment fade-in" style="font-size: 1em">
+              ISO/IEC<br>9126
+            </p>
+          </div>
+          <div class="card card-space-sm">
+            <p class="center fragment fade-in" style="font-size: 1em">
+              ISO/IEC<br>25010:2011
+            </p>
+          </div>
+          <div class="card card-space-sm">
+            <p class="center fragment fade-in" style="font-size: 1em">
+              DIN<br>66272
+            </p>
+          </div>
+          <div class="card card-space-sm">
+            <p class="center fragment fade-in" style="font-size: 1em">
+              IEEE<br>1061-1998
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <!--
+      <h4>Logs</h4>
+      <ul>
+        <li>System generated set of data when an event has happened to describe the event</li>
+        <li>informational, debug, warning, error, or alert</li>
+        <li>Logs will tell the "story" for what happened in a system</li>
+        <li>https://www.sumologic.com/blog/best-practices-creating-custom-logs-overview/</li>
+      </ul>
+
+      <h4>Metrics</h4>
+      <ul>
+        <li>Metrics are a measurement at a point in time for the system</li>
+        <li>Any time an event takes place, but metrics are typically collected at fixed-time intervals</li>
+        <li>Visualized as gauges, counters, and timers</li>
+      </ul>
+      -->
+
+      <section class="venn" data-background-image="img/bg/logging.jpg" data-background-opacity="0.1">
+        <div>
+          <div><span class="bebas fragment fade-in">When</span></div>
+          <div><span class="bebas fragment fade-in">What</span></div>
+          <div><span class="bebas fragment fade-in">Where</span></div>
+        </div>
+        <div>
+          <div><span class="bebas fragment fade-in">Who</span></div>
+          <div><span class="bebas fragment fade-in">Where</span></div>
+        </div>
+      </section>
+      
+      <section data-background-image="img/bg/logging.jpg" data-background-opacity="0.1">
+        <table class="list-dark-bg">
+          <tr>
+            <td>Bad:</td>
+            <td class="fragment fade-in fira">2017-04-10 09:50:32 -0700 Success</td>
+          </tr>
+          <tr>
+            <td>Good:</td>
+            <td class="fragment fade-in fira">2017-04-10 09:50:32 -0700 dan12345 10.0.24.123 GET /checkout/flights/ credit.payments.io Success</td>
+          </tr>
+          <tr>
+            <td>Best:</td>
+            <td class="fragment fade-in fira">JSON and UIDs</td>
+          </tr>
+        </table>
+      </section>
+
+      <!--
+      <section>
+        <h3>(TS) Metrics: When to implement, how to use and read</h3>
+        <h4>Logs</h4>
+        <ul>
+          <li>When did it happen (timestamp, maybe in RFC 3339)</li>
+          <li>What happened (e.g., error codes, impact level, etc)</li>
+          <li>Where did it happen (e.g., hostnames, gateways, etc)</li>
+          <li>Who was involved (e.g., usernames)</li>
+          <li>Where he, she, or it came from (e.g., source IP)</li>
+        </ul>
+        <hr>
+        <ul>
+          <li>Bad log: 2017-04-10 09:50:32 -0700 Success</li>
+          <li>Good log: 2017-04-10 09:50:32 -0700 dan12345 10.0.24.123 GET /checkout/flights/ Success</li>
+          <li>Good log: 2017-04-10 09:50:32 -0700 dan12345 10.0.24.123 GET /checkout/flights/ credit.payments.io Success</li>
+          <li>Syntax: Easy to parse, maybe key-value in JSON format!</li>
+          <li>Add UIDs for requests -> having the journey</li>
+        </ul>
+        <p>A log is an event that happened and a metric is a measurement of the health of a system.</p>
+      </section>
+      -->
+
+      <section data-background-image="img/bg/books.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@ninjason" target="_blank">Jason Leung</a> on Unsplash
+        </span>
+      </section>
+
+      <section data-background-image="img/bg/metrics.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@valeon" target="_blank">Mitchel Boot</a> on Unsplash
+        </span>
+      </section>
+
+      <section data-background-image="img/bg/metrics.jpg" data-background-opacity="0.05">
+        <span class="photo-credits">
+          Paper by <a href="http://www.westfallteam.com/Papers/12_steps_paper.pdf" target="_blank">Westfall 2005</a>
+        </span>
+        <table>
+          <tr>
+            <td><div class="fira number-circle orange-bg">1</div></td>
+            <td class="fragment fade-in">Identify Metrics Customers</td></tr>
+          <tr>
+            <td><div class="fira number-circle green-bg">2</div></td>
+            <td class="fragment fade-in">Target Goals</td></tr>
+          <tr>
+            <td><div class="fira number-circle red-bg">3</div></td>
+            <td class="fragment fade-in">Ask Questions</td></tr>
+          <tr>
+            <td><div class="fira number-circle blue-bg">4</div></td>
+            <td class="fragment fade-in">
+              <table>
+                <td class="center" style="vertical-align: middle;">To</td>
+                <td class="center" style="vertical-align: middle;"><i>understand<br>evaluate<br>control<br>predict</i></td>
+                <td class="center" style="vertical-align: middle;">the</td>
+                <td class="center" style="vertical-align: middle;"><i>attribute of the entity</i></td>
+                <td class="center" style="vertical-align: middle;">in order to</td>
+                <td class="center" style="vertical-align: middle;"><i>goal(s)</i></td>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section data-background-image="img/bg/metrics.jpg" data-background-opacity="0.05">
+        <span class="photo-credits">
+          Paper by <a href="http://www.westfallteam.com/Papers/12_steps_paper.pdf" target="_blank">Westfall 2005</a>
+        </span>
+        <table>
+          <tr>
+            <td><div class="fira number-circle orange-bg">5</div></td>
+            <td class="fragment fade-in">Standardize Definitions</td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle green-bg">6</div></td>
+            <td class="fragment fade-in">Choose a Measurement Function</td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle red-bg">7</div></td>
+            <td class="fragment fade-in">Establish a Measurement Method</td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle blue-bg">8</div></td>
+            <td class="fragment fade-in">Define Decision Criteria:
+                Thresholds, Variances, Control 
+            </td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle orange-bg">9</div></td>
+            <td class="fragment fade-in">Define Reporting Mechanisms</td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle green-bg">10</div></td>
+            <td class="fragment fade-in">Determine Additional Qualifiers</td>
+          </tr>
+        </table>
+      </section>
+      
+      <section data-background-image="img/bg/metrics.jpg" data-background-opacity="0.05">
+        <span class="photo-credits">
+          Paper by <a href="http://www.westfallteam.com/Papers/12_steps_paper.pdf" target="_blank">Westfall 2005</a>
+        </span>
+        <table>
+          <tr>
+            <td><div class="fira number-circle red-bg">11</div></td>
+            <td class="fragment fade-in">Collect Data<br>
+              <ol>
+                <li>objective</li>
+                <li>unambigious</li>
+                <li>convenient</li>
+                <li>accessible</li>
+              </ol>
+              </td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle blue-bg">12</div></td>
+            <td class="fragment fade-in">The People Side of the Metrics Equation</td>
+          </tr>
+        </table>
+      </section>
+      
+      <section class="center">
+        <img src="img/metric.png" style="width: 120%; max-width: 120%; position: relative; left: -3em;">
+      </section>
+      
+      <section>
+        <h3>(BW) Theory / Learnings / How To</h3>
+      </section>
+      
+      <section>
+        <h3>(BW) Live Coding: Grafana</h3>
+      </section>
+      
+      <section data-background-image="img/bg/mousse.jpg">
+      </section>
+
+      <section>
+        <div style="display: flex; flex-direction: row; margin: 0 7em;">
+          <div>
+            <span class="metronom-logo-yellow">
+              <i class="fab fa-twitter"></i>
+              <span>and</span>
+              <i class="fab fa-instagram"></i>:
+            </span>
+          </div>
+          <div class="metronom-yellow" style="padding-left: 1em;">
+            <span>
+              @bjoern.wendland<br>@tbsschroeder<br>@wearemetronom
+            </span>
+          </div>
+        </div>
+        <div class="center">
+          <img src="img/qrcode.png" style="height: 13em; margin-top: 0.5em;">
+          <div id="hashtag-cloud" class="center">
+            <strong class="metronom-red">#METRONOMians</strong>
+            <strong class="metronom-logo-yellow">#passion</strong>
+            <strong class="metronom-blue">#ambition</strong>
+            <strong class="metronom-green">#purpose</strong>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="js/print.js"></script>
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      printWideAspectRation: true,
+      controls: false,
+      history: true,
+      center: true,
+      slideNumber: 'c/t',
+      showSlideNumber: 'speaker',
+      transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [{
+        src: 'js/notes.js',
+        async: true
+      }, {
+        src: 'js/math.js',
+        async: true
+      }]
+    });
+
+    var footer = $('#footer').html();
+    if (window.location.search.match(/print-pdf/gi)) {
+      Reveal.addEventListener('ready', function (event) {
+        $('.slide-background').append(footer);
+      });
+    } else {
+      $('div.reveal').append(footer);
+    }
+  </script>
+</body>
+
+</html>
