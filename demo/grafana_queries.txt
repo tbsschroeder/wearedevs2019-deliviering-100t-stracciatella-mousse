@@ -1,0 +1,64 @@
+==== CONFIRMED ====
+
+SELECT
+  $__time(time_stamp),
+  confirmed_value as "Confirmed"
+FROM
+  random_data
+WHERE
+  $__timeFilter(time_stamp)
+ORDER BY time_stamp ASC
+
+==== per day
+
+SELECT
+  $__timeGroup(time_stamp, `1d`),
+  sum(confirmed_value) as "Confirmed/Day"
+FROM random_data
+GROUP BY 1
+order by 1 desc
+
+==== INVOICED ====
+
+SELECT
+  $__time(time_stamp),
+  invoiced_value as "Invoiced"
+FROM
+  random_data
+WHERE
+  $__timeFilter(time_stamp)
+ORDER BY time_stamp ASC
+
+==== per day
+
+SELECT
+  $__timeGroup(time_stamp, `1d`),
+  sum(invoiced_value) as "Invoiced/Day"
+FROM random_data
+GROUP BY 1
+order by 1 desc
+
+
+==== CONFIRMED - INVOICED ====
+
+
+SELECT
+  $__time(time_stamp),
+  confirmed_value-invoiced_value as "Confirmed and Invoice"
+FROM
+  random_data
+WHERE
+  $__timeFilter(time_stamp)
+ORDER BY time_stamp ASC
+
+==== per day
+
+SELECT
+  $__timeGroup(time_stamp, `1d`),
+  sum(confirmed_value)-sum(invoiced_value)  as "Confirmed and Invoice"
+FROM
+  random_data
+WHERE
+  $__timeFilter(time_stamp)
+GROUP BY 1
+order by 1 desc

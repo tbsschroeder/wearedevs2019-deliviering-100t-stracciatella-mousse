@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>100t of Stracciatella</title>
+
+  <link rel="stylesheet" href="css/fontawesome-5.4.1.all.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/metronom.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/venn.css">
+  <link rel="stylesheet" href="css/guide.css">
+
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+</head>
+
+<body class="dark">
+  <div class="reveal">
+    <div id="footer">
+      <img class="footer-img" id="footer-left" src="img/metronom-white-yellow.png" alt="footer-left">
+      <img class="footer-img" id="footer-right" src="img/wad.svg" alt="footer-right">
+    </div>
+
+    <div class="slides">
+
+      <!--
+      <section>
+        <h3>Content</h3>
+        <small>
+          <table id="tmpt">
+            <thead>
+              <tr><th>BW</th><th>TS</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Opening</td><td></td>
+              <tr><td>Speaker Intro</td><td></td></tr>
+              <tr><td></td><td>Story telling: Stracciatella Bug</td></tr>
+              <tr><td></td><td>High level: M|Fulfill</td></tr>
+              <tr><td>How could this Bug happen?</td><td></td></tr>
+              <tr><td></td><td>Questions on Metrics: When What Where Why</td></tr>
+              <tr><td>Live coding: Grafana (Logging, Metrics, Visualization)</td><td></td></tr>
+              <tr><td></td><td>3 Phases and actual Boards during the Bug</td></tr>
+              <tr><td></td><td>CTA: Take a break for some mouse and think about what could you improve</td></tr>
+            </tbody>
+          </table>
+        </small>
+      </section>
+      -->
+
+      <!--
+      <section>
+        <h3>Speech Structure Building</h3>
+        <ul>
+          <li>Advertisment: Metro Metric Mousse</li>
+          <li>Call to Action: Step back, take a breath and have a look at your metrics</li>
+          <li>Pillars</li>
+          <ul>
+            <li>Metrics / Logging</li>
+            <li>Dashboard / Visibility (TV in the Office)</li>
+            <li>Know your data & patterns</li>
+          </ul>
+        </ul>
+      </section>
+      -->
+
+      <section class="grayscale" data-background-image="img/bg/ford.jpg">
+        <aside class="notes">
+          "Quality means doing it right even when no one is looking."
+          Henry Ford
+
+          A story about something that nobody
+          How we almost delivered 100t of Stracciatella mousse
+
+          //
+          what happened
+          how it could it happen
+          and how to prevent or safe
+          enable you to identify benefits and tasks for you
+          //
+
+          beginnig of this year
+          How a dashboard helped to make a customer very happy
+          But actualy kept us from fulfilling our business goal just a few month into the year
+
+          who are we?
+          today its Tobi and me
+          Dr Tobi (yeah, ...)
+          tobi part of the team that develops and runs the software weill be talking about
+          part of order managment team (tobi will go into more depth with this)
+
+          I am engineer and now PO of MAPI API gateway and developer portal connecting our devs.
+
+          also being at OM when all this happened
+
+          we are part of metronom
+
+          THE BIGGEST SOFTWARE COMPANY YOU NEVER HEARD ABOUT
+
+          6 locations
+          over 2000 employees
+          most innovative and forward thinking company i've worked for/with
+
+          exclusive for metro and it's customers
+
+          Transition: but who is better suited to tell about what we are actually doing than someone working on the heart of operation.
+          Dr Tobi
+        </aside>
+      </section>
+      
+      <section class="center" data-background-image="img/bg/tarte.jpg" data-background-opacity="0.4">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@mat_graphik" target="_blank">Jordane Mathieu</a> on Unsplash
+        </span>
+        <h1 class="bebas center" style="font-size: 2.5em; margin-bottom: 6em;">
+          How we almost delivered 100t<br>
+          of Stracciatella Mousse
+        </h1>
+      </section>
+      
+      <section class="center" data-background-image="img/bg/store.jpg">
+      </section>
+      
+      <!-- <section class="center grayscale" data-background-image="img/bg/store.jpg" data-background-opacity="0.5">
+        <img class="center" src="img/bearlin.png" style="width: 30%">
+      </section> -->
+      
+      <!-- <section class="center" data-background-image="img/bg/metronomnomnom.jpg"> </section> -->
+
+    <section>
+      <div class="circle-items">
+        <div><img src="img/journey/sad.png"></div>
+        <div class="fragment fade-in"><img src="img/journey/dessert.svg"></div>
+        <div class="fragment fade-in"><img src="img/journey/monitor.svg"></div>
+        <div class="fragment fade-in"><img src="img/journey/planning.svg"></div>
+        <div class="fragment fade-in">
+          <img src="img/journey/employee.svg">
+          <img src="img/logo-metronom.jpg" style="height: 0.4em; border-radius: 50%; position: relative; left: 1.0em; bottom: 1.8em;">
+        </div class="fragment fade-in">
+        <div class="fragment fade-in"><img src="img/journey/warehouse.svg"></div>
+        <div class="fragment fade-in">
+          <img src="img/journey/worker.svg"><img src="img/logo-metronom.jpg" style="height: 0.4em; border-radius: 50%; position: relative; left: 1.5em; bottom: 3.8em;">
+        </div>
+        <div class="fragment fade-in"><img src="img/journey/cargo.svg"></div>
+        <div class="fragment fade-in"><img src="img/journey/truck.svg"></div>
+        <div class="fragment fade-in"><img src="img/journey/joy.png"></div>
+      </div>
+    </section>
+
+      <section>
+        <table class="center">
+          <tr>
+            <td class="center" style="vertical-align: middle; width: 40%"">
+              <span class="bebas" style="font-size: 4em; vertical-align: middle;">
+                  99.999 x
+              </span>
+            </td>
+            <td style="width: 60%">
+              <img src="img/droetker_mousse_trans.png">
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section data-background-image="img/bg/firefighter.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://www.pexels.com/de-de/@phantomant" target="_blank">Tim Eiden</a> on Pexels
+        </span>
+      </section>
+
+      <section data-background-image="img/bg/firefighter.jpg" data-background-opacity="0.02">
+        <div class="center table-no-padding" style="font-size: 1.3em;">
+          <table>
+            <tr class="fragment fade-in">
+              <td class="orange-font" style="text-align: right;">3,5l milk / unit</td>
+              <td class="fira">=></td>
+              <td class="blue-font" style="text-align: right;">450m³ mix</td>
+            </tr>
+            <tr class="fragment fade-in">
+              <td class="orange-font" style="text-align: right;">1:4</td>
+              <td class="fira">=></td>
+              <td class="blue-font" style="text-align: right;">1800m³ mix</td>
+            </tr>
+          </table>
+          <div class="fragment fade-in">
+            <hr style="margin: 0.5 0">
+            <h1>
+              6.000.000 portions<br>
+              <span class="fragment fade-in red-font">with 10bar</span>
+              <span class="fragment fade-in green-font">in 15h
+                <img src="img/homer.gif" style="border-radius: 20px; height: 3.5em;">
+              </span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section data-background-image="img/bg/pool.jpg">
+      </section>
+
+      <section class="center">
+        <img src="img/journey/employee.svg" style="width: 38%">
+        <img src="img/journey/worker.svg" style="width: 44%; margin-bottom: -0.5em;">
+        <img src="img/logo-metronom.jpg" style="height: 1.2em; border-radius: 50%; position: relative; left: -7.5em; bottom: 10em;">
+        <img src="img/logo-metronom.jpg" style="height: 1.2em; border-radius: 50%; position: relative; left: -23.5em; bottom: 2em;">
+        <aside class="notes">
+            https://metro.sharepoint.com/sites/Branding/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FBranding%2FShared%20Documents%2FGeneral%2FBrand%2FPictures%2FMood%2FMood%5FBerlin%2FMood%20General%20low%20res&p=true&originalPath=aHR0cHM6Ly9tZXRyby5zaGFyZXBvaW50LmNvbS86Zjovcy9CcmFuZGluZy9FdUM0eHhqN0loaE5xWjlORS1kbi1nUUJmcmU5eHNMZ290ck9qOWdmVHZGeUZRP3J0aW1lPVpjejBaMDl4MTBn
+
+            or
+
+            https://metro.sharepoint.com/sites/Branding/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FBranding%2FShared%20Documents%2FGeneral%2FBrand%2FPictures%2FMood%2FMood%5FBerlin%2FEngineering%20BER%20low%20res&p=true&originalPath=aHR0cHM6Ly9tZXRyby5zaGFyZXBvaW50LmNvbS86Zjovcy9CcmFuZGluZy9FcFZOU2g0U1MwZEdraHdRNW1tQ2tPVUItM1o1dGVZVy1xd3NHQnFVNTlmVWJ3P3J0aW1lPUZtWjZhRTl4MTBn
+        </aside>
+      </section>
+
+      <section>
+        <img src="img/bug.png">
+      </section>
+
+      <section data-background-image="img/bg/chess.jpg">
+        <h2 class="center" style="margin-bottom: 8em;">
+            Why would we almost deliver 100t of Stracciatella mousse?
+          </h2>
+        <aside class="notes">
+          lets take look at betty
+
+
+          what happened with the straciatella orders?
+
+          order screen!
+
+          order not in stock
+          send anyway
+
+          How this could happen?
+
+          let's take a step back and talk about our orders:
+          metro delivers huge amoungs of goods every day
+          we deal with orders in high magnitute
+
+          most of you will be staying in a hotel and some will find chocolat or sth similar in their room
+          Hotels are one of our core buisinesses and we also deliver those sweets.
+          let me tell you. you dont order these in magnitude of 10 or 100. more like 1000.
+          99.999 is large, but might actually just be mistaken as 10.000 which is still large quantity, but not that uncommon
+
+          system worked within it's specified boundaries
+
+          NO BUG
+
+          but how should we prevent this? 
+          even notice in the first place?
+          
+          only if we know what's going on!
+
+          Transition:
+
+          Gather Data
+          Log extensively and keep track of (all) that's going on
+
+          Transition: Tobi, you're a doctor, additional treatment options for logs?
+          Should we monitor for side effects of the logs?
+      </aside>
+      </section>
+
+      <section data-background-image="img/bg/betty_1.png"></section>
+
+      <section data-background-image="img/bg/betty_2_resolved.png"></section>
+
+      <section data-background-image="img/bg/logging.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@usefulcollective" target="_blank">Mildly Useful</a> on Unsplash
+        </span>
+      </section>
+
+      <section data-background-image="img/bg/books.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@ninjason" target="_blank">Jason Leung</a> on Unsplash
+        </span>
+      </section>
+
+      <section data-background-image="img/bg/books.jpg" data-background-opacity="0.1">
+        <div class="venn">
+          <div><span class="bebas fragment fade-in">When</span></div>
+          <div><span class="bebas fragment fade-in">What</span></div>
+          <div><span class="bebas fragment fade-in">Where</span></div>
+          <div><span class="bebas fragment fade-in">Why</span></div>
+        </div>
+        <table class="fragment fade-in center list-dark-bg" style="width: 95%; margin-top: 2em;">
+          <tr class="">
+            <td>Bad</td>
+            <td class="fira">1574690314 Success</td>
+          </tr>
+          <tr class="fragment fade-in ">
+            <td>Good</td>
+            <td class="fira">
+              <span class="orange-font">1574690314</span>
+              <span class="green-font">dan12345</span>
+              <span class="green-font">GET</span>
+              <span class="red-font">/checkout/flights/</span>
+              <span class="red-font">credit.payments.io</span>
+              <span class="blue-font">{...}</span>
+            </td>
+          </tr>
+        </table>
+        <aside class="notes">
+          <ul>
+            <li>System generated set of data</li>
+            <li>Describe the event</li>
+            <li>Logs will tell a story</li>
+          </ul>
+          <ul>
+            <li>When did it happen (timestamp)</li>
+            <li>What happened (e.g., error codes, impact level, etc)</li>
+            <li>Where did it happen (e.g., hostnames, gateways, etc)</li>
+            <li>Why did it happened? (e.g., stacktrace)</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section data-background-image="img/bg/books.jpg" data-background-opacity="0.1">
+        <div class="list-dark-bg json" style="width:55%; margin-left: auto; margin-right: auto;">
+          <p>JSON and UIDs</p>
+          <span>{</span>
+          <div class="orange-font">
+            <span>timestamp:</span>
+            <span>1574690314</span>
+          </div>
+          <div class="green-font">
+            <span>user:</span>
+            <span>dan12345</span>
+          </div>
+          <div class="green-font">
+            <span>http:</span>
+            <span>GET</span>
+          </div>
+          <div class="red-font">
+            <span>endpoint:</span>
+            <span>/checkout/flights/</span>
+          </div>
+          <div class="red-font">
+            <span>service:</span>
+            <span>credit.payments.io</span>
+          </div>
+          <div class="blue-font">
+            <span>message:</span>
+            <span>{...}</span>
+          </div>
+          <div>
+            <span>uid:</span>
+            <span>tu-a8c3df-e2c7ba</span>
+          </div>
+          <span>}</span>
+        </table>
+      </section>
+
+      <!--
+      <section>
+        <h3>(TS) Metrics: When to implement, how to use and read</h3>
+        <h4>Logs</h4>
+        <ul>
+          <li>When did it happen (timestamp, maybe in RFC 3339)</li>
+          <li>What happened (e.g., error codes, impact level, etc)</li>
+          <li>Where did it happen (e.g., hostnames, gateways, etc)</li>
+          <li>Who was involved (e.g., usernames)</li>
+          <li>Where he, she, or it came from (e.g., source IP)</li>
+        </ul>
+        <hr>
+        <ul>
+          <li>Bad log: 2017-04-10 09:50:32 -0700 Success</li>
+          <li>Good log: 2017-04-10 09:50:32 -0700 dan12345 10.0.24.123 GET /checkout/flights/ Success</li>
+          <li>Good log: 2017-04-10 09:50:32 -0700 dan12345 10.0.24.123 GET /checkout/flights/ credit.payments.io Success</li>
+          <li>Syntax: Easy to parse, maybe key-value in JSON format!</li>
+          <li>Add UIDs for requests -> having the journey</li>
+        </ul>
+        <p>A log is an event that happened and a metric is a measurement of the health of a system.</p>
+      </section>
+      -->
+
+      <section data-background-image="img/bg/cockpit.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@valeon" target="_blank">Mitchel Boot</a> on Unsplash
+        </span>
+        <aside class="notes">
+          <ul>
+            <li>Measurement at a point in time for the system</li>
+            <li>Collected at fixed-time intervals</li>
+            <li>Visualized as gauges, counters, and timers</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section data-background-image="img/bg/cockpit.jpg" data-background-opacity="0.02">
+        <h2 class="center" style="color: #5EC299!important">Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.</h2>
+        <p style="float: right;">Charles Goodhart, 1975</p>
+      </section>
+
+      <section data-background-image="img/bg/metric.jpg">
+      </section>
+      
+      <section data-background-image="img/bg/prototype_demo.jpg">
+        <aside class="notes">
+          to come
+        </aside>
+      </section>
+
+      <section>
+        <!--https://clrs.cc/-->
+        <div class="guide">
+          <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+              <div><p class="center fragment fade-in" data-fragment-index=6>Reporting</p></div>
+              <div><p class="center fragment fade-in" data-fragment-index=7>Data</p></div>
+              <div><p class="center fragment fade-in" data-fragment-index=8>People</p></div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+              <div><p class="center fragment fade-in" data-fragment-index=3>Definition</p></div>
+              <div><p class="center fragment fade-in" data-fragment-index=4>Function</p></div>
+              <div><p class="center fragment fade-in" data-fragment-index=5>Criteria</p></div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+              <div><p class="center fragment fade-in" data-fragment-index=0>Customers</p></div>
+              <div><p class="center fragment fade-in" data-fragment-index=1>Goal</p></div>
+              <div><p class="center fragment fade-in" data-fragment-index=2>Question</p></div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ol>
+            <li>Identify Metrics Customers</li>
+            <li>Target Goals</li>
+            <li>Ask Questions</li>
+            <li>Standardize Definitions</li>
+            <li>Choose a Measurement Function</li>
+            <li>Define Decision Criteria</li>
+            <li>Define Reporting Mechanisms</li>
+            <li>Colleting Data: objective, unambigious, convenient, accessible</li>
+            <li>The People Side of the Metrics Equation</li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="center">
+        <span class="photo-credits" style="left: 32%">
+          Paper by <a href="http://www.westfallteam.com/Papers/12_steps_paper.pdf" target="_blank">Linda Westfall (2005): 12 Steps to Useful Software Metrics</a>
+        </span>
+        <img src="img/paper.png" style="width: 17em;">
+      </section>
+
+      <!--
+      <section data-background-image="img/bg/cockpit.jpg" data-background-opacity="0.05">
+        <span class="photo-credits">
+          Paper by <a href="http://www.westfallteam.com/Papers/12_steps_paper.pdf" target="_blank">Westfall 2005</a>
+        </span>
+        <h3>Phase of Identification</h3>
+        <table>
+          <tr>
+            <td><div class="fira number-circle orange-bg">1</div></td>
+            <td class="fragment fade-in">Identify Metrics Customers</td></tr>
+          <tr>
+            <td><div class="fira number-circle green-bg">2</div></td>
+            <td class="fragment fade-in">Target Goals</td></tr>
+          <tr>
+            <td><div class="fira number-circle red-bg">3</div></td>
+            <td class="fragment fade-in">Ask Questions</td></tr>
+          <tr>
+            <td style="vertical-align:middle"><div class="fira number-circle blue-bg">4</div></td>
+            <td class="fragment fade-in">
+              <table>
+                <td class="center" style="vertical-align: middle;">To</td>
+                <td class="center bracket" style="vertical-align: middle;"><i>understand<br>evaluate<br>control<br>predict</i></td>
+                <td class="center" style="vertical-align: middle;">the</td>
+                <td class="center bracket" style="vertical-align: middle; width: 22%;"><i>attribute of the entity</i></td> 
+                <td class="center" style="vertical-align: middle;">in order to</td>
+                <td class="center bracket" style="vertical-align: middle;"><i>goal(s)</i></td>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <aside class="notes">
+          <ul>
+            <li>1: Business Experts and Engineers</li>
+            <li>2: Increase the total amount of invoices</li>
+            <li>3: How big is the difference between confirmed and invoiced orders?</li>
+            <li>4: To control the amount of confirmed and invoiced orders in order to minify the delay between these two status.</li>
+          </ul>
+        </aside>
+      </section>
+      -->
+
+      <!--
+      <section data-background-image="img/bg/cockpit.jpg" data-background-opacity="0.05">
+        <span class="photo-credits">
+          Paper by <a href="http://www.westfallteam.com/Papers/12_steps_paper.pdf" target="_blank">Westfall 2005</a>
+        </span>
+        <h3 class="center">Phase of Implementation</h3>
+        <table>
+          <tr>
+            <td><div class="fira number-circle orange-bg">5</div></td>
+            <td class="fragment fade-in">Standardize Definitions</td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle green-bg">6</div></td>
+            <td class="fragment fade-in">Choose a Measurement Function</td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle red-bg">7</div></td>
+            <td class="fragment fade-in">Define Decision Criteria</td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle blue-bg">8</div></td>
+            <td class="fragment fade-in">Define Reporting Mechanisms</td>
+          </tr>
+        </table>
+        <aside class="notes">
+          <ul>
+            <li>5: Invoiced, Confirmed, Order, Status</li>
+            <li>6: Calculation: Sum of each article</li>
+            <li>7: Warning thresholds x €</li>
+            <li>8: Slack</li>
+          </ul>
+        </aside>
+      </section>
+      -->
+      
+      <!--
+      <section data-background-image="img/bg/cockpit.jpg" data-background-opacity="0.05">
+        <span class="photo-credits">
+          Paper by <a href="http://www.westfallteam.com/Papers/12_steps_paper.pdf" target="_blank">Westfall 2005</a>
+        </span>
+        <h3 class="center">Phase of Impact</h3>
+        <table style="margin-bottom: 3em;">
+          <tr>
+            <td style="vertical-align:middle"><div class="fira number-circle red-bg">9</div></td>
+            <td class="fragment fade-in" data-fragment-index=0>Collect Data<br>
+              <ol style="padding-left: 1em;">
+                <li><span>objective</span></li>
+                <li><span>unambigious</span></li>
+                <li><span>convenient</span></li>
+                <li><span>accessible</span></li>
+              </ol>
+              </td>
+          </tr>
+          <tr>
+            <td><div class="fira number-circle blue-bg">10</div></td>
+            <td class="fragment fade-in" data-fragment-index=5>The People Side of the Metrics Equation</td>
+          </tr>
+        </table>
+        <aside class="notes">
+          <ul>
+            <li>9: We know "what data to collect?"; Now "who should collect the data?"</li>
+            <ol style="padding-left: 1em;">
+              <li>objective: Same person will collect the data the same way each time</li>
+              <li>unambiguous: Two different people will collect the same data</li>
+              <li>convenient: Not disruptive! Data collection must become part of the process and not an extra step performed outside of the workflow</li>
+              <li>accessible: In order for data to be useful and used, easy access to the data is required.</li>
+            </ol>
+            <li>10: Don't measure individuals; Never use it as a "stick"; Don't ignore it; Provide feedback...</li>
+          </ul>
+        </aside>
+      </section>
+      -->
+      
+      <section class="grayscale" data-background-image="img/bg/moose.jpg">
+        <span class="photo-credits">
+          Photo by <a href="https://unsplash.com/@krishnadigitalcolorphotostudio" target="_blank">Shivam Kumar</a> on Unsplash
+        </span>
+      </section>
+      
+      <section>
+        <img src="img/mmm.png">
+      </section>
+      
+      <!--
+      <section data-background-image="img/bg/mousse.jpg">
+      </section>
+      -->
+
+      <section style="font-size: 1.25em;">
+        <div style="display: flex; flex-direction: row;">
+          <div style="display: flex; flex-direction: column; justify-content: space-evenly;">
+            <div>
+              <div>
+                <span class="metronom-logo-yellow">
+                  <i class="fab fa-twitter"></i>
+                  <span>and</span>
+                  <i class="fab fa-instagram"></i>:
+                </span>
+              </div>
+              <div class="metronom-yellow">
+                <span>
+                  @bjoern.wendland<br>@tbsschroeder<br>@wearemetronom
+                </span>
+              </div>
+            </div>
+            <div>
+              <span class="metronom-red">#METRONOMians</span><br>
+              <span class="metronom-logo-yellow">#passion</span><br>
+              <span class="metronom-blue">#ambition</span><br>
+              <span class="metronom-green">#purpose</span>
+            </div>
+          </div>
+          <div class="center">
+            <img src="img/qr-code.svg" style="height: 12em;">
+          </div>
+        </div>
+        <p class="center">https://bit.ly/34b5SMB</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="js/print.js"></script>
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      printWideAspectRation: true,
+      controls: false,
+      history: true,
+      center: true,
+      slideNumber: 'c/t',
+      showSlideNumber: 'speaker',
+      transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [{
+        src: 'js/notes.js',
+        async: true
+      }, {
+        src: 'js/math.js',
+        async: true
+      }]
+    });
+
+    var footer = $('#footer').html();
+    if (window.location.search.match(/print-pdf/gi)) {
+      Reveal.addEventListener('ready', function (event) {
+        $('.slide-background').append(footer);
+      });
+      $(".photo-credits").remove();
+    } else {
+      $('div.reveal').append(footer);
+    }
+  </script>
+</body>
+
+</html>

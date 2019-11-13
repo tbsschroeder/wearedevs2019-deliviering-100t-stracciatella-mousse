@@ -1,0 +1,31 @@
+.venn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.venn div {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-size: 1.5em !important;
+}
+
+.venn > div:nth-child(1) {
+  border: 0.2em solid #FAAD00!important;
+  background-color: rgba(250, 173, 0, 0.1);
+}
+.venn > div:nth-child(2) {
+  border: 0.2em solid #5EC299!important;
+  background-color: rgba(94, 194, 153, 0.1);
+}
+.venn > div:nth-child(3) {
+  border: 0.2em solid #E34229!important;
+  background-color: rgba(227, 66, 41, 0.1);
+}
+.venn > div:nth-child(4) {
+  border: 0.2em solid #6694CF!important;
+  background-color: rgba(102, 148, 207, 0.1);
+}

@@ -1,0 +1,27 @@
+.guide{
+  left: -1em;
+  font-family: "BebasNeue" !important;
+  font-size: 1.5em !important;
+}
+
+.guide div div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guide div div div {
+  margin: 0.5em 0.2em 0.5em 0.2em;
+  border-radius: 0.5em;
+  width: 5em;
+}
+
+/* https://clrs.cc/ */
+.guide div div:nth-child(1) div:nth-child(1) { background-color: #0074D9; /*border: 5px solid #0054B9;*/ }
+.guide div div:nth-child(1) div:nth-child(2) { background-color: #39CCCC; /*border: 5px solid #19aCaC;*/ }
+.guide div div:nth-child(1) div:nth-child(3) { background-color: #3D9970; /*border: 5px solid #1D7950;*/ }
+.guide div div:nth-child(2) div:nth-child(1) { background-color: #2ECC40; /*border: 5px solid #0EaC20;*/ }
+.guide div div:nth-child(2) div:nth-child(2) { background-color: #ccc12e; /*border: 5px solid #aca10e;*/ }
+.guide div div:nth-child(2) div:nth-child(3) { background-color: #FF851B; /*border: 5px solid #DF650B;*/ }
+.guide div div:nth-child(3) div:nth-child(1) { background-color: #FF4136; /*border: 5px solid #DF2116;*/ }
+.guide div div:nth-child(3) div:nth-child(2) { background-color: #85144b; /*border: 5px solid #65042b;*/ }
+.guide div div:nth-child(3) div:nth-child(3) { background-color: #F012BE; /*border: 5px solid #D0029E;*/ }

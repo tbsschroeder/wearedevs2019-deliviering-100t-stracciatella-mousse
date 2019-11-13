@@ -1,0 +1,15 @@
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+
+  postgresdb:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=stracciatella
+      - POSTGRES_DB=stracciatella
