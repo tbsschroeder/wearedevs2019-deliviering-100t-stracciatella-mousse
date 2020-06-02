@@ -23,11 +23,10 @@ ul li {
     position: absolute;
     bottom: 0;
     right: 0;
-    max-width: 8% !important;
+    max-width: 20% !important;
     min-width: 2em !important;
     height: auto !important;
     margin: 1.5em;
-    font-size: 16px;
 }
 
 .list-bg {
@@ -89,30 +88,6 @@ ul li {
     top: 1em;
     right: -1em;
     color: #E34229;
-}
-
-.photo-credits {
-    position: fixed;
-    bottom: 1em;
-    left: 40%;
-    font-size: 0.3em !important;
-    color: #ccc;
-}
-
-.photo-credits a,
-span a {
-    color: #ccc !important;
-    text-decoration: underline;
-}
-
-.photo-credits a:hover,
-span a:hover {
-    color: #faa543 !important;
-}
-
-.photo-credits-dark a,
-.photo-credits-dark{
-    color: #555 !important;
 }
 
 .json div {
