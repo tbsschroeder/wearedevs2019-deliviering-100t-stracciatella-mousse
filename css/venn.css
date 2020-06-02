@@ -29,3 +29,14 @@
   border: 0.2em solid #6694CF!important;
   background-color: rgba(102, 148, 207, 0.1);
 }
+
+.venn-vertical{
+  flex-direction: column;
+  position: fixed;
+  left: 3.5em;
+  top: 4.75em;
+}
+
+.venn-vertical div {
+  font-size: 0.4em !important;
+}
