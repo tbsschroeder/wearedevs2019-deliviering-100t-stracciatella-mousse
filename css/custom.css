@@ -104,14 +104,68 @@ ul li {
     padding: 0.2em!important;
 }
 
-.circle-items div{ width: 12%; position: absolute; }
-.circle-items div:nth-child(1){  left:  3em; top:  8em; }
-.circle-items div:nth-child(2){  left:  7em; top:  4em; }
-.circle-items div:nth-child(3){  left: 12em; top:  1em; }
-.circle-items div:nth-child(4){  left: 17em; top:  3em; }
-.circle-items div:nth-child(5){  left: 22em; top:  5em; }
-.circle-items div:nth-child(6){  left: 22em; top: 11em; }
-.circle-items div:nth-child(7){  left: 17em; top: 13em; }
-.circle-items div:nth-child(8){  left: 12em; top: 15em; }
-.circle-items div:nth-child(9){  left:  7em; top: 12em; }
-.circle-items div:nth-child(10){ left:  3em; top: 8em; }
+#moose1{
+    position: fixed;
+    top: 11em;
+    left: 3em;
+    width: 40%;
+    max-height: 10em!important;
+}
+#moose2{
+    position: fixed;
+    top: 13em;
+    left: 5em;
+    width: 40%;
+    max-height: 10em!important;
+}
+
+.circle-container {
+    position: fixed;
+    top: 12em;
+    left:50%
+}
+
+.circle-container #employee-m {
+    height: 0.4em;
+    border-radius: 50%;
+    position: relative;
+    left: 0.6em; bottom: 1.8em;
+}
+.circle-container #worker-m {
+    height: 0.4em;
+    border-radius: 50%;
+    position: relative;
+    left: 0em; bottom: 4.2em;
+}
+
+.circle-container div{
+    width: 12%;
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4em; height: 4em;
+    margin: -2em;
+}
+
+.deg180 { transform: rotate(180deg) translate(8em) rotate(-180deg); }
+.deg220 { transform: rotate(220deg) translate(8em) rotate(-220deg); }
+.deg260 { transform: rotate(260deg) translate(8em) rotate(-260deg); }
+.deg300 { transform: rotate(300deg) translate(8em) rotate(-300deg); }
+.deg340 { transform: rotate(340deg) translate(8em) rotate(-340deg); }
+.deg20  { transform: rotate(20deg)  translate(8em) rotate(-20deg); }
+.deg60  { transform: rotate(60deg)  translate(8em) rotate(-60deg); }
+.deg100 { transform: rotate(100deg) translate(8em) rotate(-100deg); }
+.deg140 { transform: rotate(140deg) translate(8em) rotate(-140deg); }
+
+
+@media screen and (max-width: 620px) {
+
+    #footer-left {
+        min-width: 3em !important;
+    }
+    #footer-right {
+        font-size: 0.4em;
+        max-width: 30%!important;
+        margin-bottom: 2.4em;
+    }
+}

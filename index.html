@@ -78,23 +78,19 @@
         </h1>
       </section>
       
-    <section data-auto-animate>
-      <div class="circle-items">
-        <div><img src="img/journey/sad.png"></div>
-        <div class="fragment fade-in"><img src="img/journey/dessert.svg"></div>
-        <div class="fragment fade-in"><img src="img/journey/monitor.svg"></div>
-        <div class="fragment fade-in"><img src="img/journey/planning.svg"></div>
-        <div class="fragment fade-in">
-          <img src="img/journey/employee.svg">
-          <img src="img/logo-metronom.jpg" style="height: 0.4em; border-radius: 50%; position: relative; left: 1.0em; bottom: 1.8em;">
-        </div class="fragment fade-in">
-        <div class="fragment fade-in"><img src="img/journey/warehouse.svg"></div>
-        <div class="fragment fade-in">
-          <img src="img/journey/worker.svg"><img src="img/logo-metronom.jpg" style="height: 0.4em; border-radius: 50%; position: relative; left: 1.5em; bottom: 3.8em;">
-        </div>
-        <div class="fragment fade-in"><img src="img/journey/cargo.svg"></div>
-        <div class="fragment fade-in"><img src="img/journey/truck.svg"></div>
-        <div class="fragment fade-in"><img data-id="joy" src="img/journey/joy.png"></div>
+    <section class="center" data-auto-animate>
+      <div class="circle-container">
+        <div class="deg180"><img src="img/journey/sad.png"></div>
+        <div class="deg220 fragment fade-in" data-fragment-index="0"><img src="img/journey/dessert.svg"></div>
+        <div class="deg260 fragment fade-in" data-fragment-index="1"><img src="img/journey/monitor.svg"></div>
+        <div class="deg300 fragment fade-in" data-fragment-index="2"><img src="img/journey/planning.svg"></div>
+        <div class="deg340 fragment fade-in" data-fragment-index="3"><img src="img/journey/employee.svg"><img src="img/logo-metronom.jpg" id="employee-m"></div>
+        <div class="deg20  fragment fade-in" data-fragment-index="4"><img src="img/journey/warehouse.svg"></div>
+        <div class="deg60  fragment fade-in" data-fragment-index="5"><img src="img/journey/worker.svg"><img src="img/logo-metronom.jpg" id="worker-m" style=""></div>
+        <div class="deg100 fragment fade-in" data-fragment-index="6"><img src="img/journey/cargo.svg"></div>
+        <div class="deg140 fragment fade-in" data-fragment-index="7"><img src="img/journey/truck.svg"></div>
+        <div class="deg180 fragment fade-in" data-fragment-index="8"><img data-id="joy" src="img/journey/joy.png"></div>
+        <div class="fragment fade-in" data-fragment-index="8"><img data-id="mousse" src="img/droetker_mousse_trans.png"></div>
       </div>
     </section>
 
@@ -108,7 +104,7 @@
               </span>
             </td>
             <td style="width: 60%">
-              <img src="img/droetker_mousse_trans.png">
+              <img data-id="mousse" src="img/droetker_mousse_trans.png">
             </td>
           </tr>
         </table>
@@ -121,7 +117,7 @@
         <div class="center table-no-padding" style="font-size: 1.3em;">
           <table>
             <tr class="fragment fade-in">
-              <td class="orange-font" style="text-align: right;">3,5l milk / unit</td>
+              <td class="orange-font" style="text-align: right;">3,5l 🥛 / unit</td>
               <td class="fira">=></td>
               <td class="blue-font" style="text-align: right;">450m³ mix</td>
             </tr>
@@ -347,8 +343,11 @@
           to come
         </aside>
       </section>
+      
+      <section data-background-image="img/bg/metrics.jpg">
+      </section>
 
-      <section>
+      <section data-background-image="img/bg/metrics.jpg" data-background-opacity="0.05">
         <!--https://clrs.cc/-->
         <div class="guide">
           <div style="display: flex; flex-direction: column;">
@@ -390,8 +389,8 @@
       </section>
       
       <section class="grayscale" data-background-image="img/bg/moose.jpg">
-        <img src="img/metronom-white-yellow.png" style="position: fixed; top: 11em; left: 3em; width: 40%;">
-        <img src="img/mm.png" style="position: fixed; top: 13em; left: 5em; width: 40%;">
+        <img id="moose1" src="img/metronom-white-yellow.png">
+        <img id="moose2" src="img/mm.png">
       </section>
 
       <section class="grayscale" data-background-image="img/bg/camera.jpg" data-background-opacity="0.2">
@@ -402,6 +401,7 @@
           <li>Logs by <a href="https://unsplash.com/@usefulcollective" target="_blank">Mildly Useful</a> on Unsplash</li>
           <li>Books by <a href="https://unsplash.com/@ninjason" target="_blank">Jason Leung</a> on Unsplash</li>
           <li>Cockpit by <a href="https://unsplash.com/@valeon" target="_blank">Mitchel Boot</a> on Unsplash</li>
+          <li>Metrics by <a href="https://unsplash.com/@lukechesser" target="_blank">Luke Chesser</a> on Unsplash</li>
           <li>Moose by <a href="https://unsplash.com/@krishnadigitalcolorphotostudio" target="_blank">Shivam Kumar</a> on Unsplash</li>
           <li>Camera by <a href="https://unsplash.com/@krishnadigitalcolorphotostudio" target="_blank">Shivam Kumar</a> on Unsplash</li>
         </ul>
@@ -435,7 +435,7 @@
             <img src="img/qr-code.svg" style="height: 12em;">
           </div>
         </div>
-        <p class="center">https://bit.ly/34b5SMB</p>
+        <p class="center">🦌 https://cutt.ly/moose 🍧</p>
       </section>
 
     </div>
