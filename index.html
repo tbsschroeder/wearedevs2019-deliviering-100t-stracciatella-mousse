@@ -445,6 +445,7 @@
   <script src="js/jquery-3.3.1.slim.min.js"></script>
   <script src="js/head.min.js"></script>
   <script src="js/reveal.js"></script>
+  <script src="plugin/chalkboard/chalkboard.js"></script>
 
   <script>
     // More info https://github.com/hakimel/reveal.js#configuration
@@ -460,11 +461,26 @@
       // More info https://github.com/hakimel/reveal.js#dependencies
       dependencies: [{
         src: 'js/notes.js',
+        src: 'plugin/chalkboard/chalkboard.js',
         async: true
       }, {
         src: 'js/math.js',
         async: true
-      }]
+      }],
+      chalkboard: {
+        src: "chalkboard.json",
+        toggleChalkboardButton: false,
+        toggleNotesButton: false,
+      },
+      keyboard: {
+        67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+        66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+        46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+        8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+        68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+        88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+        89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+      },
     });
 
     var footer = $('#footer').html();
